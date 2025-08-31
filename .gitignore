@@ -1,3 +1,5 @@
 mlruns
 .venv
+.venv-1
 cap_project_assets
+artifacts
