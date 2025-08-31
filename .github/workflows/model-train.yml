@@ -34,3 +34,6 @@ jobs:
 
       - name: Run EDA
         run: python -m eda
+
+      - name: Run Training
+        run: python -m train

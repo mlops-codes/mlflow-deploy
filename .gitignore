@@ -3,3 +3,4 @@ mlruns
 .venv-1
 cap_project_assets
 artifacts
+__pycache__
