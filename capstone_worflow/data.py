@@ -1,5 +1,5 @@
 import pandas as pd
-from .config import settings
+from config import settings
 
 def load_dataset() -> pd.DataFrame:
     df = pd.read_csv(settings.data_path)
