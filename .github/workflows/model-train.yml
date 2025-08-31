@@ -36,4 +36,18 @@ jobs:
         run: python -m eda
 
       - name: Run Training
-        run: python -m train
+        run: python -m train | tee training_output.log
+
+      - name: Create summary
+        run: |
+          echo "=== Best Model Summary ==="
+          grep "BEST:" training_output.log || echo "No summary found."
+
+      - name: Upload MLflow Runs and Model Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-and-model-artifacts
+          path: |
+            capstone_worflow/mlruns/**
+            capstone_worflow/artifacts/**
+          if-no-files-found: warn
