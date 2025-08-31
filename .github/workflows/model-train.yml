@@ -33,4 +33,4 @@ jobs:
           echo "ARTIFACTS_DIR=artifacts" >> .env
 
       - name: Run EDA
-        run: bash scripts/run_eda.sh
+        run: python -m eda
